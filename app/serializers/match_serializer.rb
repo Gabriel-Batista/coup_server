@@ -1,3 +1,3 @@
 class MatchSerializer < ActiveModel::Serializer
-    attributes :id, :completed
+    attributes :id, :seats, :phase, :turn
 end

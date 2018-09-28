@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_09_28_192433) do
     t.string "match_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phase"
+    t.string "turn"
   end
 
   create_table "user_matches", force: :cascade do |t|

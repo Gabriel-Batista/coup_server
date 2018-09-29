@@ -16,3 +16,6 @@ Card.create(name: "Ambassador", ability: "Draw", block: "Steal", imgURL: "https:
 
 User.create(name: "Gabe")
 User.create(name: "Amirata")
+User.create(name: "Scarlet")
+User.create(name: "Kevin")
+User.create(name: "Bryan")

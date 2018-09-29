@@ -27,7 +27,7 @@ class UsersController < ApplicationController
                 @match = Match.create()
                 @match.user_matches.create(user_id: params[:id])
                 @user.toggle_in_match(@match.id)
-                render json: {result: "A new match was created."}
+                render json: @match
             elsif @user.current_match === nil
                 @match = @matches.all.first
                 @match.user_matches.create(user_id: params[:id])

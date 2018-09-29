@@ -16,4 +16,11 @@ class ApplicationController < ActionController::API
         errors_hash
     end
 
+    def broadcast_to_match(match)
+        serialized_data = ActiveModelSerializers::Adapter::Json.new(
+            MatchSerializer.new(match)
+        ).serializable_hash
+        ActionCable.server.broadcast "match#{match.id}", serialized_data
+    end
+
 end

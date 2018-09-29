@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_192433) do
+ActiveRecord::Schema.define(version: 2018_09_29_142709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 2018_09_28_192433) do
 
   create_table "matches", force: :cascade do |t|
     t.boolean "completed"
-    t.integer "seats"
+    t.integer "seats", default: 1
     t.string "match_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phase"
     t.string "turn"
+    t.string "declared"
   end
 
   create_table "user_matches", force: :cascade do |t|

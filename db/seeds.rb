@@ -12,3 +12,7 @@ Card.create(name: "Contessa", ability: nil, block: "Assassinate", imgURL: "https
 Card.create(name: "Captain", ability: "Steal", block: "Steal", imgURL: "https://ibb.co/eSPcMp", desc: "")
 Card.create(name: "Ambassador", ability: "Draw", block: "Steal", imgURL: "https://ibb.co/hSDRE9", desc: "")
 Card.create(name: "Ambassador", ability: "Draw", block: "Steal", imgURL: "https://ibb.co/jXgcnU", desc: "")
+
+
+User.create(name: "Gabe")
+User.create(name: "Amirata")

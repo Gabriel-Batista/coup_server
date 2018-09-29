@@ -25,12 +25,12 @@ class UsersController < ApplicationController
             @user = User.find(params[:id])
             if @matches.empty? && @user.current_match === nil
                 @match = Match.create()
-                @match.user_match.create(user_id: params[:id])
+                @match.user_matches.create(user_id: params[:id])
                 @user.toggle_in_match(@match.id)
                 render json: {result: "A new match was created."}
             elsif @user.current_match === nil
                 @match = @matches.all.first
-                @match.user_match.create(user_id: params[:id])
+                @match.user_matches.create(user_id: params[:id])
                 @match.update(seats: @match.seats + 1)
                 @user.toggle_in_match(@match.id)
                 render json: @match

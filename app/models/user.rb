@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
             def toggle_in_match(match_id)
             begin
-                self.update(currentMatch: match_id)
+                self.update(current_match: match_id)
             rescue ActiveRecord::RecordNotFound
                 render json: {error: "User #{self.id} does not exist"}, status: 400
             end

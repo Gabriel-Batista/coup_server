@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Card.create(name: "Duke", ability: "Bank", block: "Foreign Aid", desc: "")          #1
-Card.create(name: "Assassin", ability: "Assassinate", block: "", desc: "")         #2
+Card.create(name: "Duke", ability: "bank", block: "Foreign Aid", desc: "")          #1
+Card.create(name: "Assassin", ability: "assassinate", block: "", desc: "")         #2
 Card.create(name: "Contessa", ability: "", block: "Assassinate", desc: "")         #3
-Card.create(name: "Captain", ability: "Steal", block: "Steal", desc: "")            #4
-Card.create(name: "Ambassador", ability: "Draw", block: "Steal", desc: "")          #5
-Card.create(name: "Income", ability: "Income", block: "", desc: "")                 #6
-Card.create(name: "Foreign Aid", ability: "Foreign Aid", block: "", desc: "")       #7
-Card.create(name: "Coup", ability: "Coup", block: "", desc: "")                     #8
+Card.create(name: "Captain", ability: "steal", block: "Steal", desc: "")            #4
+Card.create(name: "Ambassador", ability: "draw", block: "Steal", desc: "")          #5
+Card.create(name: "Income", ability: "income", block: "", desc: "")                 #6
+Card.create(name: "Foreign Aid", ability: "foreign_aid", block: "", desc: "")       #7
+Card.create(name: "Coup", ability: "coup", block: "", desc: "")                     #8
 
 
 User.create(name: "Gabe", handL: 4, handR: 2)
@@ -22,7 +22,7 @@ User.create(name: "Scarlet", handL: 1, handR: 5)
 User.create(name: "Kevin", handL: 3, handR: 3)
 User.create(name: "Bryan", handL: 1, handR: 5)
 
-Match.create(completed: false, seats: 4, phase: "declare", turn: 1, declared: 1)
+Match.create(completed: false, seats: 4, turn: 1, declared: 1)
 
 UserMatch.create(user_id: 1, match_id: 1)
 UserMatch.create(user_id: 2, match_id: 1)

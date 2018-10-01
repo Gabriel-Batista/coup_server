@@ -23,4 +23,10 @@ class ApplicationController < ActionController::API
         ActionCable.server.broadcast "match#{match.id}", serialized_data
     end
 
+    def draw_hand(match, player)
+        deck = JSON::parse(match.deck).shuffle
+        player.update(handL: deck.pop, handR: deck.pop)
+        match.update(deck: deck.to_json)
+    end
+
 end

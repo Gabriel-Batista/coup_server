@@ -27,12 +27,14 @@ class UsersController < ApplicationController
                 @match = Match.create(turn: @user.id)
                 @match.user_matches.create(user_id: params[:id])
                 @user.toggle_in_match(@match.id)
+                draw_hand(@match, @user)
                 render json: @match
             elsif @user.current_match === nil
                 @match = @matches.all.first
                 @match.user_matches.create(user_id: params[:id])
                 @match.update(seats: @match.seats + 1)
                 @user.toggle_in_match(@match.id)
+                draw_hand(@match, @user)
                 render json: @match
             else
                 render json: {error: "User is already in a match"}, status: 400

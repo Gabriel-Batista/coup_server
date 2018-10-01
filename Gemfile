@@ -46,3 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # rails serializer
 gem 'active_model_serializers', '~> 0.10.0'
+
+# json
+gem 'json', '~> 1.8', '>= 1.8.3'

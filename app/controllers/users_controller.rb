@@ -24,7 +24,7 @@ class UsersController < ApplicationController
             @matches = Match.where("seats < 4")
             @user = User.find(params[:id])
             if @matches.empty? && @user.current_match === nil
-                @match = Match.create()
+                @match = Match.create(turn: @user.id)
                 @match.user_matches.create(user_id: params[:id])
                 @user.toggle_in_match(@match.id)
                 render json: @match

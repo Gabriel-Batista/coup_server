@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_143155) do
+ActiveRecord::Schema.define(version: 2018_10_01_144630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_09_29_143155) do
     t.string "name"
     t.string "ability"
     t.string "block"
-    t.string "imgURL"
     t.string "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,12 +27,12 @@ ActiveRecord::Schema.define(version: 2018_09_29_143155) do
   create_table "matches", force: :cascade do |t|
     t.boolean "completed"
     t.integer "seats", default: 1
-    t.string "match_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phase", default: "Declare"
     t.string "turn"
-    t.string "declared"
+    t.integer "declared", default: 0
+    t.integer "target"
   end
 
   create_table "user_matches", force: :cascade do |t|
@@ -45,12 +44,14 @@ ActiveRecord::Schema.define(version: 2018_09_29_143155) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "current_match"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "handL"
     t.integer "handR"
     t.integer "wallet"
+    t.boolean "activeL", default: true
+    t.boolean "activeR", default: true
+    t.boolean "in_match"
   end
 
 end

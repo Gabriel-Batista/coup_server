@@ -1,12 +1,16 @@
 class MatchesController < ApplicationController
     def index
-        match = Match.all.first
-        serialized_data = ActiveModelSerializers::Adapter::Json.new(
-            MatchSerializer.new(match)
-        ).serializable_hash
-        ActionCable.server.broadcast "match#{params[:id]}", serialized_data
-        head :ok
+        @matches = Match.all
+        render json: @matches
     end
+    # def index
+    #     match = Match.all.first
+    #     serialized_data = ActiveModelSerializers::Adapter::Json.new(
+    #         MatchSerializer.new(match)
+    #     ).serializable_hash
+    #     ActionCable.server.broadcast "match#{params[:id]}", serialized_data
+    #     head :ok
+    # end
     # def index
     #     match = Match.find(params[:match_id])
     #     serialized_data = ActiveModelSerializers::Adapter::Json.new(
